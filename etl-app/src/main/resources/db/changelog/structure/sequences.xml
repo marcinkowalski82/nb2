@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="ddl-sequences-2020-09-01-001" author="mkowalski">
+        <createSequence sequenceName="S_JOB" startValue="1000"/>
+    </changeSet>
+
+    <changeSet id="ddl-sequences-2020-09-01-002" author="mkowalski">
+        <createSequence sequenceName="S_JOB_STATUS" startValue="1000"/>
+    </changeSet>
+
+    <changeSet id="ddl-sequences-2020-09-02-002" author="mkowalski">
+        <createSequence sequenceName="S_STAGE" startValue="1000"/>
+    </changeSet>
+
+    <changeSet id="ddl-sequences-2020-09-02-003" author="mkowalski">
+        <createSequence sequenceName="S_TASK" startValue="1000"/>
+    </changeSet>
+
+    <changeSet id="ddl-sequences-2020-09-02-004" author="mkowalski">
+        <createSequence sequenceName="S_TASK_TYPE" startValue="1000"/>
+    </changeSet>
+
+    <changeSet id="ddl-sequences-2020-09-02-005" author="mkowalski">
+        <createSequence sequenceName="S_TASK_PROPERTY" startValue="1000"/>
+    </changeSet>
+
+    <changeSet id="ddl-sequences-2020-09-02-006" author="mkowalski">
+        <createSequence sequenceName="S_PROJECT" startValue="1000"/>
+    </changeSet>
+
+</databaseChangeLog>

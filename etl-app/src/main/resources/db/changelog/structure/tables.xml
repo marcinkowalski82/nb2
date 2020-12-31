@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+    <changeSet id="ddl-tables-2020-09-01-001" author="mkowalski">
+        <createTable tableName="JOB">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CRON" type="VARCHAR(512)"/>
+            <column name="ENABLED" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CLASS_NAME" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="ddl-tables-2020-09-01-002" author="mkowalski">
+        <createTable tableName="JOB_STATUS">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="JOB_ID" type="BIGINT"/>
+            <column name="START_DATE" type="DATE"/>
+            <column name="END_DATE" type="DATE"/>
+            <column name="EXECUTION_STATUS" type="VARCHAR(512)"/>
+            <column name="ERROR_MESSAGE" type="VARCHAR(512)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="ddl-tables-2019-12-02-002" author="mkowalski">
+        <createTable tableName="STAGE">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="PROCESS_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PREPROCESSOR_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="ddl-tables-2019-12-02-003" author="mkowalski">
+        <createTable tableName="TASK">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="STAGE_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TYPE_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="ddl-tables-2019-12-02-004" author="mkowalski">
+        <createTable tableName="TASK_TYPE">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TASK_CLASS" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="ddl-tables-2019-12-02-005" author="mkowalski">
+        <createTable tableName="TASK_PROPERTY">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="TASK_ID" type="BIGINT"/>
+            <column name="KEY" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VALUE" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="ddl-tables-2019-12-02-007" author="mkowalski">
+        <createTable tableName="PROJECT">
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(256)"/>
+            <column name="TYPE" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

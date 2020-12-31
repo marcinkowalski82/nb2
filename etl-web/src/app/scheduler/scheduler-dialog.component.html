@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Edit Job</h2>
+
+<mat-dialog-content [formGroup]="formGroup" style="height:300px;" >
+
+  <mat-form-field appearance="outline" style="display:none;">
+    <input matInput formControlName=id value="{{formData.id}}"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label color="black">Job name:</mat-label>
+    <input matInput formControlName=name value="{{formData.name}}">
+    <mat-error>
+      <span *ngIf="!formGroup.get('name').valid">Name is required</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label>Cron:</mat-label>
+    <input matInput formControlName=cron value="{{formData.cron}}">
+    <mat-error>
+      <span *ngIf="!formGroup.get('cron').valid">Cron is required</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width:100%;">
+    <mat-label>Class name:</mat-label>
+    <input matInput value="{{formData.className}}" [disabled]="true">
+  </mat-form-field>
+
+   <mat-slide-toggle formControlName=enabled checked="enabled.value" click="enabled.value =!enabled.value">Enable job</mat-slide-toggle>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary" [disabled]="!formGroup.valid" (click)="save()">Save</button>
+</mat-dialog-actions>

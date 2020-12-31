@@ -1,0 +1,13 @@
+ID, NAME, CRON, ENABLED, CLASS_NAME
+1, SampleJob 1,0 0/1 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+2, SampleJob 2,0 0/2 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+3, SampleJob 3,0 0/3 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+4, SampleJob 4,0 0/4 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+5, SampleJob 5,0 0/5 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+6, SampleJob 6,0 0/6 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+7, SampleJob 7,0 0/7 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+8, SampleJob 8,0 0/8 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+9, SampleJob 9,0 0/9 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+10, SampleJob 10,0 0/10 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+11, SampleJob 11,0 0/11 * ? * * *,1,com.mkowalski.nb.etl.job.SampleJob
+12, SampleJob 12,0 0/12 * ? * * *,0,com.mkowalski.nb.etl.job.SampleJob

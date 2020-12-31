@@ -1,0 +1,70 @@
+<mat-toolbar class="cs-scheme">
+  <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name">App Name</h1>
+
+  <button *ngIf="!isAuthenticated" (click)="oktaAuth.login('/')"> Login </button>
+  <button *ngIf="isAuthenticated" (click)="oktaAuth.logout()"> Logout </button>
+
+</mat-toolbar>
+<mat-sidenav-container class="cs-nb-container" autosize>
+  <mat-sidenav #sidenav class="cs-nb-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+    <mat-nav-list>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>dvr</mat-icon>
+        <a mat-list-item href="/project">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Projects</span>
+        </a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>av_timer</mat-icon>
+        <a mat-list-item href="/scheduler">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Schedulers</span>
+          </a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon>domain</mat-icon>
+        <a mat-list-item href="/load-status">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Load Status</span>
+        </a>
+      </mat-list-item>
+
+<!--
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+        <mat-icon mat-list-icon>home</mat-icon>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+        <a mat-list-item href="...">Submenu Item 1</a>
+        <a mat-list-item href="/scheduler">Scheduler</a>
+        <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+          <mat-list-item>SubSubmenu Item 1</mat-list-item>
+          <mat-list-item>SubSubmenu Item 2</mat-list-item>
+        </div>
+      </div>
+-->
+    </mat-nav-list>
+    <mat-nav-list>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="cs-nb-sidenav-content">
+        <router-outlet>
+
+        </router-outlet>
+  </div>
+
+</mat-sidenav-container>
+
+
+
+<!-- Copyright 2017 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

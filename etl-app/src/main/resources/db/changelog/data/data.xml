@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="mkowalski" id="dml-account-2019-12-02-001">
+        <loadData
+                encoding="UTF-8"
+                file="job.csv"
+                relativeToChangelogFile="true"
+                quotchar="&#34;"
+                separator=","
+                tableName="JOB">
+            <column header="ID" name="ID" type="NUMERIC"/>
+            <column header="NAME" name="NAME" type="STRING"/>
+            <column header="CRON" name="CRON" type="STRING"/>
+            <column header="ENABLED" name="ENABLED" type="NUMERIC"/>
+            <column header="CLASS_NAME" name="CLASS_NAME" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet author="mkowalski" id="dml-account-2019-12-02-002">
+        <loadData
+                encoding="UTF-8"
+                file="project.csv"
+                relativeToChangelogFile="true"
+                quotchar="&#34;"
+                separator=","
+                tableName="PROJECT">
+            <column header="ID" name="ID" type="NUMERIC"/>
+            <column header="NAME" name="NAME" type="STRING"/>
+            <column header="TYPE" name="TYPE" type="STRING"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>
+
